@@ -1,0 +1,253 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #2c3e50 !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    color: #3498db !important;
+}
+
+/* Hero Section */
+.hero {
+    /* background: linear-gradient(135deg, #743caf 0%, #2575fc 100%); */
+    color: white;
+    padding: 60px 0;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Upload Card */
+.upload-card {
+    border: 2px dashed #dee2e6;
+    border-radius: 15px;
+    padding: 40px;
+    background-color: white;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.upload-card:hover {
+    border-color: #3498db;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.upload-icon {
+    font-size: 60px;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+.upload-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(90deg, #3498db, #2980b9);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #2980b9, #3498db);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: linear-gradient(90deg, #2ecc71, #27ae60);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(46, 204, 113, 0.2);
+    transition: all 0.3s;
+}
+
+.btn-success:hover {
+    background: linear-gradient(90deg, #27ae60, #2ecc71);
+    box-shadow: 0 8px 20px rgba(46, 204, 113, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Steps Section */
+.steps {
+    counter-reset: step;
+    margin-top: 40px;
+}
+
+.step {
+    position: relative;
+    padding-right: 50px;
+    margin-bottom: 30px;
+}
+
+.step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #3498db;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.step h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: #666;
+}
+
+/* Footer */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Tables */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #333;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+/* Alerts */
+.alert {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .upload-card {
+        padding: 20px;
+    }
+
+    .upload-icon {
+        font-size: 40px;
+    }
+}

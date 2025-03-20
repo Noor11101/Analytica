@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="analysis-section">
+    <h1 class="text-center mb-4" data-i18n="analysisTitle">Data Analysis</h1>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" data-i18n="basicStats">Basic Statistics</h5>
+                    <div class="table-responsive">
+                        {{ stats | safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title" data-i18n="dataVisualization">Data Visualization</h5>
+                    <div id="visualization">
+                        {% if plots.histogram %}
+                        <img src="/static/uploads/{{ plots.histogram }}" class="img-fluid" alt="Histogram">
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-4 text-center">
+        <button class="btn btn-primary" onclick="runAIAnalysis()" data-i18n="runAI">Run AI Analysis</button>
+        <div id="ai-results" class="mt-4"></div>
+    </div>
+</div>
+
+<script>
+function runAIAnalysis() {
+    fetch('/ai-analysis', { method: 'POST' })
+        .then(response => response.json())
+        .then(data => {
+            const resultsDiv = document.getElementById('ai-results');
+            if (data.error) {

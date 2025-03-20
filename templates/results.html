@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="results-section">
+    <h1 class="text-center mb-4" data-i18n="resultsTitle">Analysis Results</h1>
+    
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title" data-i18n="fileInfo">File Information</h5>
+            <ul class="list-group">
+                <li class="list-group-item"><strong data-i18n="rows">Rows:</strong> {{ file_info.rows }}</li>
+                <li class="list-group-item"><strong data-i18n="columns">Columns:</strong> {{ file_info.columns }}</li>
+                <li class="list-group-item"><strong data-i18n="missingData">Missing Data:</strong> {{ file_info.missing_data }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <h3 data-i18n="visualizations">Visualizations</h3>
+        <div class="row">
+            {% if plots.histogram %}
+            <div class="col-md-6">
+                <img src="/static/uploads/{{ plots.histogram }}" class="img-fluid" alt="Histogram">
+            </div>
+            {% endif %}
+            {% if plots.scatter %}
+            <div class="col-md-6">
+                <img src="/static/uploads/{{ plots.scatter }}" class="img-fluid" alt="Scatter Plot">
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="mt-4 text-center">
+        <a href="/download/csv" class="btn btn-success" data-i18n="downloadCSV">Download CSV</a>
+        <a href="/download/excel" class="btn btn-success" data-i18n="downloadExcel">Download Excel</a>
+    </div>
+</div>
+{% endblock %}

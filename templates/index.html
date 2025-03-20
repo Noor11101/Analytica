@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero-section rounded">
+    <div class="container">
+        <h1 class="animate__animated animate__fadeInDown text-light">Welcome to Analytica</h1>
+        <p class="animate__animated animate__fadeInUp">
+            Unlock insights from your data with powerful analytics and visualizations.
+        </p>
+        <a href="/upload" class="btn btn-light btn-lg mt-3 animate__animated animate__fadeInUp">Get Started</a>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services-section">
+    <div class="container">
+        <h2 class="text-center mb-5 animate__animated animate__fadeIn">Our Services</h2>
+        <div class="row">
+            <!-- Service 1 -->
+            <div class="col-md-4 animate__animated animate__fadeInLeft">
+                <div class="service-card">
+                    <img src="{{ url_for('static', filename='images/data_analysis.jpg') }}" alt="Data Analysis">
+                    <h3>Data Analysis</h3>
+                    <p>Perform in-depth analysis on your datasets to uncover trends and patterns.</p>
+                </div>
+            </div>
+            <!-- Service 2 -->
+            <div class="col-md-4 animate__animated animate__fadeInUp">
+                <div class="service-card">
+                    <img src="{{ url_for('static', filename='images/data_visualization.jpg') }}" alt="Data Visualization">
+                    <h3>Data Visualization</h3>
+                    <p>Create stunning visualizations to represent your data effectively.</p>
+                </div>
+            </div>
+            <!-- Service 3 -->
+            <div class="col-md-4 animate__animated animate__fadeInRight">
+                <div class="service-card">
+                    <img src="{{ url_for('static', filename='images/data_Reporting.jpg') }}" alt="Data Reporting">
+                    <h3>Data Reporting</h3>
+                    <p>Generate comprehensive reports to share insights with your team.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom CSS -->
+<style>
+    /* Custom Styles */
+    .hero-section {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .hero-section h1 {
+        font-size: 3.5rem;
+        font-weight: bold;
+        animation: fadeInDown 1.5s;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+        margin-top: 20px;
+        animation: fadeInUp 1.5s;
+    }
+
+    .services-section {
+        padding: 60px 0;
+        background-color: #f8f9fa;
+    }
+
+    .service-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .service-card p {
+        color: #666;
+    }
+
+    .animate__animated {
+        animation-duration: 1.5s;
+    }
+
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<!-- JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+{% endblock %}
