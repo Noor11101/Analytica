@@ -1,6 +1,6 @@
 # DataInsights Hub
 
-#### Video Demo: [Watch the Video](https://www.youtube.com/watch?v=your-video-id)  
+#### Video Demo: [[Watch the Video](https://www.youtube.com/watch?v=your-video-id](https://www.youtube.com/watch?v=NpDbhsE1p9g&ab_channel=ProgrammingwithNoor))  
 #### Description:  
 DataInsights Hub is a web-based platform designed to help users analyze and visualize their data with ease. Whether you're a data scientist, business analyst, or just someone curious about data, this tool provides a user-friendly interface to upload, process, and explore datasets.
 
